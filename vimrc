@@ -84,5 +84,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
