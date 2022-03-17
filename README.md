@@ -6,9 +6,9 @@
 
 [上古神器Vim：从恶言相向到爱不释手 - 终极Vim教程01 - 带你配置属于你自己的最强IDE_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV164411P7tw?share_source=copy_web)
 
-[GitHub - theniceboy/.vim: I'm using Neovim now: https://github.com/theniceboy/nvim](https://github.com/theniceboy/.vim)
-
 # #1 Vim(1)
+
+[GitHub - theniceboy/.vim: I'm using Neovim now: https://github.com/theniceboy/nvim](https://github.com/theniceboy/.vim)
 
 - 模式
     - Normal模式
