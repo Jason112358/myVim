@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/.vim/vimrc.html</title>
+<meta name="Generator" content="Vim/8.1">
+<meta name="plugin-version" content="vim8.1_v1">
+<meta name="syntax" content="vim">
+<meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
+<meta name="colorscheme" content="snazzy">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #000000; }
+body { font-family: monospace; color: #ffffff; background-color: #000000; }
+* { font-size: 1em; }
+.String { color: #ffffaf; }
+.Number { color: #ffffaf; }
+.LineNr { color: #5f5f87; }
+.Function { color: #5fd7ff; font-weight: bold; }
+.Delimiter { color: #ffffaf; }
+.Comment { color: #5f5f87; font-style: italic; }
+.Special { color: #ffffaf; }
+.Identifier { color: #87d7ff; }
+.Statement { color: #ff5faf; font-weight: bold; }
+.PreProc { color: #ff5f5f; }
+.Type { color: #87d7ff; font-weight: bold; }
+.Operator { color: #ff5faf; font-weight: bold; }
+.Normal { color: #ffffff; background-color: #000000; padding-bottom: 1px; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  var lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr">  1 </span><span class="Comment">&quot; _   _                  _   _   _      </span>
+<span id="L2" class="LineNr">  2 </span><span class="Comment">&quot;| \ | | ___  ___  __ _ (_) | | | |_  __</span>
+<span id="L3" class="LineNr">  3 </span><span class="Comment">&quot;|  \| |/ _ \/ __|/ _` || | | | | \ \/ /</span>
+<span id="L4" class="LineNr">  4 </span><span class="Comment">&quot;| |\  | (_) \__ \ (_| || | | |_| |&gt;  &lt; </span>
+<span id="L5" class="LineNr">  5 </span><span class="Comment">&quot;|_| \_|\___/|___/\__,_|/ |  \___//_/\_\</span>
+<span id="L6" class="LineNr">  6 </span><span class="Comment">&quot;                     |__/              </span>
+<span id="L7" class="LineNr">  7 </span><span class="Comment">&quot;</span>
+<span id="L8" class="LineNr">  8 </span>
+<span id="L9" class="LineNr">  9 </span><span class="Comment">&quot; basic</span>
+<span id="L10" class="LineNr"> 10 </span><span class="Statement">set</span> <span class="PreProc">number</span>
+<span id="L11" class="LineNr"> 11 </span><span class="Statement">syntax</span> <span class="Type">on</span>
+<span id="L12" class="LineNr"> 12 </span><span class="Statement">let</span> <span class="Identifier">mapleader</span> <span class="Operator">=</span> <span class="String">&quot; </span><span class="String">&quot;</span>
+<span id="L13" class="LineNr"> 13 </span><span class="Statement">set</span> <span class="PreProc">norelativenumber</span>
+<span id="L14" class="LineNr"> 14 </span><span class="Statement">set</span> <span class="PreProc">cursorline</span>
+<span id="L15" class="LineNr"> 15 </span><span class="Statement">set</span> <span class="PreProc">wrap</span>
+<span id="L16" class="LineNr"> 16 </span><span class="Statement">set</span> <span class="PreProc">showcmd</span>
+<span id="L17" class="LineNr"> 17 </span><span class="Statement">set</span> <span class="PreProc">wildmenu</span>
+<span id="L18" class="LineNr"> 18 </span><span class="Statement">set</span> <span class="PreProc">hlsearch</span>
+<span id="L19" class="LineNr"> 19 </span><span class="Statement">exec</span> <span class="String">&quot;nohlsearch</span><span class="String">&quot;</span>
+<span id="L20" class="LineNr"> 20 </span><span class="Statement">set</span> <span class="PreProc">incsearch</span>
+<span id="L21" class="LineNr"> 21 </span><span class="Statement">set</span> <span class="PreProc">ignorecase</span>
+<span id="L22" class="LineNr"> 22 </span><span class="Statement">set</span> <span class="PreProc">smartcase</span>
+<span id="L23" class="LineNr"> 23 </span><span class="Statement">set</span> <span class="PreProc">ruler</span>
+<span id="L24" class="LineNr"> 24 </span>
+<span id="L25" class="LineNr"> 25 </span><span class="Statement">noremap</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span><span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span> :nohlsearch<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L26" class="LineNr"> 26 </span><span class="Statement">noremap</span> H 5h
+<span id="L27" class="LineNr"> 27 </span><span class="Statement">noremap</span> J 5j
+<span id="L28" class="LineNr"> 28 </span><span class="Statement">noremap</span> K 5k
+<span id="L29" class="LineNr"> 29 </span><span class="Statement">noremap</span> L 5l
+<span id="L30" class="LineNr"> 30 </span>
+<span id="L31" class="LineNr"> 31 </span><span class="Statement">inoremap</span> jj <span class="Delimiter">&lt;</span><span class="Special">esc</span><span class="Delimiter">&gt;</span>
+<span id="L32" class="LineNr"> 32 </span>
+<span id="L33" class="LineNr"> 33 </span><span class="Statement">map</span> s <span class="Delimiter">&lt;</span><span class="Special">nop</span><span class="Delimiter">&gt;</span>
+<span id="L34" class="LineNr"> 34 </span><span class="Statement">map</span> S :w<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L35" class="LineNr"> 35 </span><span class="Statement">map</span> Q :q<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L36" class="LineNr"> 36 </span><span class="Statement">map</span> W :wq<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L37" class="LineNr"> 37 </span><span class="Statement">map</span> R :source $MYVIMRC<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L38" class="LineNr"> 38 </span><span class="Statement">map</span> r :r
+<span id="L39" class="LineNr"> 39 </span>
+<span id="L40" class="LineNr"> 40 </span><span class="Comment">&quot; split</span>
+<span id="L41" class="LineNr"> 41 </span><span class="Statement">map</span> sr :set splitright<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>:vsplit<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L42" class="LineNr"> 42 </span><span class="Statement">map</span> sl :set nosplitright<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>:vsplit<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L43" class="LineNr"> 43 </span><span class="Statement">map</span> su :set nosplitbelow<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>:split<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L44" class="LineNr"> 44 </span><span class="Statement">map</span> sd :set splitbelow<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>:split<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L45" class="LineNr"> 45 </span>
+<span id="L46" class="LineNr"> 46 </span><span class="Statement">map</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span>j <span class="Delimiter">&lt;</span><span class="Special">C-w</span><span class="Delimiter">&gt;</span>j
+<span id="L47" class="LineNr"> 47 </span><span class="Statement">map</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span>k <span class="Delimiter">&lt;</span><span class="Special">C-w</span><span class="Delimiter">&gt;</span>k
+<span id="L48" class="LineNr"> 48 </span><span class="Statement">map</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span>l <span class="Delimiter">&lt;</span><span class="Special">C-w</span><span class="Delimiter">&gt;</span>l
+<span id="L49" class="LineNr"> 49 </span><span class="Statement">map</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span>h <span class="Delimiter">&lt;</span><span class="Special">C-w</span><span class="Delimiter">&gt;</span>h
+<span id="L50" class="LineNr"> 50 </span>
+<span id="L51" class="LineNr"> 51 </span><span class="Statement">map</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span><span class="Delimiter">&lt;</span><span class="Special">up</span><span class="Delimiter">&gt;</span> :res+5<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L52" class="LineNr"> 52 </span><span class="Statement">map</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span><span class="Delimiter">&lt;</span><span class="Special">down</span><span class="Delimiter">&gt;</span> :res-5<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L53" class="LineNr"> 53 </span><span class="Statement">map</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span><span class="Delimiter">&lt;</span><span class="Special">left</span><span class="Delimiter">&gt;</span> :vertical resize-5<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L54" class="LineNr"> 54 </span><span class="Statement">map</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span><span class="Delimiter">&lt;</span><span class="Special">right</span><span class="Delimiter">&gt;</span> :vertical resize+5<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L55" class="LineNr"> 55 </span>
+<span id="L56" class="LineNr"> 56 </span>
+<span id="L57" class="LineNr"> 57 </span><span class="Comment">&quot; tab</span>
+<span id="L58" class="LineNr"> 58 </span><span class="Statement">map</span> tn :tabe<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L59" class="LineNr"> 59 </span><span class="Statement">map</span> t- :-tabnext<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L60" class="LineNr"> 60 </span><span class="Statement">map</span> t= :+tabnext<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L61" class="LineNr"> 61 </span>
+<span id="L62" class="LineNr"> 62 </span><span class="Statement">map</span> sv <span class="Delimiter">&lt;</span><span class="Special">C-w</span><span class="Delimiter">&gt;</span>t<span class="Delimiter">&lt;</span><span class="Special">C-w</span><span class="Delimiter">&gt;</span>H
+<span id="L63" class="LineNr"> 63 </span><span class="Statement">map</span> sh <span class="Delimiter">&lt;</span><span class="Special">C-w</span><span class="Delimiter">&gt;</span>t<span class="Delimiter">&lt;</span><span class="Special">C-w</span><span class="Delimiter">&gt;</span>K
+<span id="L64" class="LineNr"> 64 </span>
+<span id="L65" class="LineNr"> 65 </span>
+<span id="L66" class="LineNr"> 66 </span><span class="Comment">&quot; pro</span>
+<span id="L67" class="LineNr"> 67 </span><span class="Statement">set</span> <span class="PreProc">nocompatible</span>
+<span id="L68" class="LineNr"> 68 </span><span class="Statement">filetype</span> <span class="Type">on</span>
+<span id="L69" class="LineNr"> 69 </span><span class="Statement">filetype</span> <span class="Type">indent</span> <span class="Type">on</span>
+<span id="L70" class="LineNr"> 70 </span><span class="Statement">filetype</span> <span class="Type">plugin</span> <span class="Type">on</span>
+<span id="L71" class="LineNr"> 71 </span><span class="Statement">filetype</span> <span class="Type">plugin</span> <span class="Type">indent</span> <span class="Type">on</span>
+<span id="L72" class="LineNr"> 72 </span>
+<span id="L73" class="LineNr"> 73 </span><span class="Statement">set</span> <span class="PreProc">mouse</span>=a
+<span id="L74" class="LineNr"> 74 </span><span class="Statement">set</span> <span class="PreProc">encoding</span>=utf-8
+<span id="L75" class="LineNr"> 75 </span>
+<span id="L76" class="LineNr"> 76 </span><span class="Statement">let</span> &amp;t_ut<span class="Operator">=</span><span class="String">''</span>
+<span id="L77" class="LineNr"> 77 </span>
+<span id="L78" class="LineNr"> 78 </span><span class="Comment">&quot; set expandtab</span>
+<span id="L79" class="LineNr"> 79 </span><span class="Comment">&quot; set tabstop=2</span>
+<span id="L80" class="LineNr"> 80 </span><span class="Comment">&quot; set shiftwidth=2</span>
+<span id="L81" class="LineNr"> 81 </span><span class="Comment">&quot; set shiftwidth=2</span>
+<span id="L82" class="LineNr"> 82 </span><span class="Comment">&quot; set softtabstop=2</span>
+<span id="L83" class="LineNr"> 83 </span><span class="Statement">set</span> <span class="PreProc">scrolloff</span>=8
+<span id="L84" class="LineNr"> 84 </span><span class="Comment">&quot; set tw=0</span>
+<span id="L85" class="LineNr"> 85 </span><span class="Comment">&quot; set indentexpr=</span>
+<span id="L86" class="LineNr"> 86 </span>
+<span id="L87" class="LineNr"> 87 </span><span class="Statement">set</span> <span class="PreProc">list</span>
+<span id="L88" class="LineNr"> 88 </span><span class="Statement">set</span> <span class="PreProc">listchars</span>=tab<span class="Statement">:</span>→\ <span class="Statement">,</span>trail<span class="Statement">:</span>∎
+<span id="L89" class="LineNr"> 89 </span>
+<span id="L90" class="LineNr"> 90 </span><span class="Statement">map</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span>sc :set spell!<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L91" class="LineNr"> 91 </span><span class="Statement">map</span> tx :r !figlet
+<span id="L92" class="LineNr"> 92 </span>
+<span id="L93" class="LineNr"> 93 </span><span class="Statement">set</span> <span class="PreProc">backspace</span>=indent<span class="Statement">,</span>eol<span class="Statement">,</span><span class="Statement">start</span>
+<span id="L94" class="LineNr"> 94 </span><span class="Statement">set</span> <span class="PreProc">foldmethod</span>=indent
+<span id="L95" class="LineNr"> 95 </span><span class="Statement">set</span> <span class="PreProc">foldlevel</span>=99
+<span id="L96" class="LineNr"> 96 </span>
+<span id="L97" class="LineNr"> 97 </span><span class="Statement">let</span> &amp;t_SI <span class="Operator">=</span> <span class="String">&quot;\&lt;Esc&gt;]50;CursorShape=1\x7</span><span class="String">&quot;</span>
+<span id="L98" class="LineNr"> 98 </span><span class="Statement">let</span> &amp;t_SR <span class="Operator">=</span> <span class="String">&quot;\&lt;Esc&gt;]50;CursorShape=2\x7</span><span class="String">&quot;</span>
+<span id="L99" class="LineNr"> 99 </span><span class="Statement">let</span> &amp;t_EI <span class="Operator">=</span> <span class="String">&quot;\&lt;Esc&gt;]50;CursorShape=0\x7</span><span class="String">&quot;</span>
+<span id="L100" class="LineNr">100 </span>
+<span id="L101" class="LineNr">101 </span><span class="Statement">set</span> <span class="PreProc">laststatus</span>=2
+<span id="L102" class="LineNr">102 </span>
+<span id="L103" class="LineNr">103 </span><span class="Statement">set</span> <span class="PreProc">autochdir</span>
+<span id="L104" class="LineNr">104 </span>
+<span id="L105" class="LineNr">105 </span><span class="Statement">au</span> <span class="Type">BufReadPost</span> * <span class="Statement">if</span> <span class="Function">line</span><span class="Delimiter">(</span><span class="String">&quot;'\&quot;</span><span class="String">&quot;</span><span class="Delimiter">)</span> <span class="Operator">&gt;</span> <span class="Number">1</span> <span class="Operator">&amp;&amp;</span> <span class="Function">line</span><span class="Delimiter">(</span><span class="String">&quot;'\&quot;</span><span class="String">&quot;</span><span class="Delimiter">)</span> <span class="Operator">&lt;=</span> <span class="Function">line</span><span class="Delimiter">(</span><span class="String">&quot;$</span><span class="String">&quot;</span><span class="Delimiter">)</span> | exe <span class="String">&quot;normal! g'\&quot;</span><span class="String">&quot;</span> | <span class="Statement">endif</span>
+<span id="L106" class="LineNr">106 </span>
+<span id="L107" class="LineNr">107 </span><span class="Statement">map</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span> <span class="Delimiter">&lt;</span><span class="Special">Esc</span><span class="Delimiter">&gt;</span>/&lt;++&gt;<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>:nohlsearch<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>c4l
+<span id="L108" class="LineNr">108 </span>
+<span id="L109" class="LineNr">109 </span><span class="Comment">&quot; plugins</span>
+<span id="L110" class="LineNr">110 </span><span class="Statement">call</span> plug#<span class="Normal">begin</span><span class="Delimiter">(</span><span class="String">'~/.vim/plugged'</span><span class="Delimiter">)</span>
+<span id="L111" class="LineNr">111 </span>
+<span id="L112" class="LineNr">112 </span>Plug <span class="String">'vim-airline/vim-airline'</span>
+<span id="L113" class="LineNr">113 </span>Plug <span class="String">'scrooloose/nerdtree'</span>
+<span id="L114" class="LineNr">114 </span>Plug <span class="String">'Xuyuanp/nerdtree-git-plugin'</span>
+<span id="L115" class="LineNr">115 </span>Plug <span class="String">'w0rp/ale'</span>
+<span id="L116" class="LineNr">116 </span>Plug <span class="String">'mbbill/undotree'</span>
+<span id="L117" class="LineNr">117 </span>Plug <span class="String">'majutsushi/tagbar'</span>
+<span id="L118" class="LineNr">118 </span>Plug <span class="String">'iamcco/markdown-preview.nvim'</span>
+<span id="L119" class="LineNr">119 </span>Plug <span class="String">'ycm-core/YouCompleteMe'</span>
+<span id="L120" class="LineNr">120 </span>Plug <span class="String">'connorholyday/vim-snazzy'</span>
+<span id="L121" class="LineNr">121 </span>
+<span id="L122" class="LineNr">122 </span><span class="Statement">call</span> plug#<span class="Normal">end</span><span class="Delimiter">()</span>
+<span id="L123" class="LineNr">123 </span>
+<span id="L124" class="LineNr">124 </span><span class="Statement">color</span> snazzy
+<span id="L125" class="LineNr">125 </span><span class="Statement">let</span> <span class="Identifier">g:SnazzyTransparent</span> <span class="Operator">=</span> <span class="Number">0.5</span>
+<span id="L126" class="LineNr">126 </span>
+<span id="L127" class="LineNr">127 </span><span class="Comment">&quot; ===</span>
+<span id="L128" class="LineNr">128 </span><span class="Comment">&quot; === NERDTree</span>
+<span id="L129" class="LineNr">129 </span><span class="Comment">&quot; ===</span>
+<span id="L130" class="LineNr">130 </span><span class="Statement">map</span> tt :NERDTreeToggle<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L131" class="LineNr">131 </span>
+<span id="L132" class="LineNr">132 </span><span class="Comment">&quot; ===</span>
+<span id="L133" class="LineNr">133 </span><span class="Comment">&quot; === NERDTree-git</span>
+<span id="L134" class="LineNr">134 </span><span class="Comment">&quot; ===</span>
+<span id="L135" class="LineNr">135 </span><span class="Comment">&quot; let g:NERDTreeIndicatorMapCustom = {}</span>
+<span id="L136" class="LineNr">136 </span>
+<span id="L137" class="LineNr">137 </span><span class="Comment">&quot; ===</span>
+<span id="L138" class="LineNr">138 </span><span class="Comment">&quot; === ale</span>
+<span id="L139" class="LineNr">139 </span><span class="Comment">&quot; ===</span>
+<span id="L140" class="LineNr">140 </span><span class="Comment">&quot; let b:ale_linters = ['pylint']</span>
+<span id="L141" class="LineNr">141 </span><span class="Comment">&quot; let b:ale_fixers = ['autopep8','yapf']</span>
+<span id="L142" class="LineNr">142 </span>
+<span id="L143" class="LineNr">143 </span><span class="Comment">&quot; ===</span>
+<span id="L144" class="LineNr">144 </span><span class="Comment">&quot; === MarkdownPreview</span>
+<span id="L145" class="LineNr">145 </span><span class="Comment">&quot; ===</span>
+<span id="L146" class="LineNr">146 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_auto_start</span> <span class="Operator">=</span> <span class="Number">0</span>
+<span id="L147" class="LineNr">147 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_auto_close</span> <span class="Operator">=</span> <span class="Number">1</span>
+<span id="L148" class="LineNr">148 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_refresh_slow</span> <span class="Operator">=</span> <span class="Number">0</span>
+<span id="L149" class="LineNr">149 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_command_for_global</span> <span class="Operator">=</span> <span class="Number">0</span>
+<span id="L150" class="LineNr">150 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_open_to_the_world</span> <span class="Operator">=</span> <span class="Number">0</span>
+<span id="L151" class="LineNr">151 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_open_ip</span> <span class="Operator">=</span> <span class="String">''</span>
+<span id="L152" class="LineNr">152 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_browser</span> <span class="Operator">=</span> <span class="String">'chrome'</span>
+<span id="L153" class="LineNr">153 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_echo_preview_url</span> <span class="Operator">=</span> <span class="Number">0</span>
+<span id="L154" class="LineNr">154 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_browserfunc</span> <span class="Operator">=</span> <span class="String">''</span>
+<span id="L155" class="LineNr">155 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_preview_options</span> <span class="Operator">=</span> <span class="Delimiter">{</span>
+<span id="L156" class="LineNr">156 </span><span class="Special">    \</span> <span class="String">'mkit'</span>: <span class="Delimiter">{}</span>,
+<span id="L157" class="LineNr">157 </span><span class="Special">    \</span> <span class="String">'katex'</span>: <span class="Delimiter">{}</span>,
+<span id="L158" class="LineNr">158 </span><span class="Special">    \</span> <span class="String">'uml'</span>: <span class="Delimiter">{}</span>,
+<span id="L159" class="LineNr">159 </span><span class="Special">    \</span> <span class="String">'maid'</span>: <span class="Delimiter">{}</span>,
+<span id="L160" class="LineNr">160 </span><span class="Special">    \</span> <span class="String">'disable_sync_scroll'</span>: <span class="Number">0</span>,
+<span id="L161" class="LineNr">161 </span><span class="Special">    \</span> <span class="String">'sync_scroll_type'</span>: <span class="String">'middle'</span>,
+<span id="L162" class="LineNr">162 </span><span class="Special">    \</span> <span class="String">'hide_yaml_meta'</span>: <span class="Number">1</span>
+<span id="L163" class="LineNr">163 </span><span class="Special">    \</span> <span class="Delimiter">}</span>
+<span id="L164" class="LineNr">164 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_markdown_css</span> <span class="Operator">=</span> <span class="String">''</span>
+<span id="L165" class="LineNr">165 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_highlight_css</span> <span class="Operator">=</span> <span class="String">''</span>
+<span id="L166" class="LineNr">166 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_port</span> <span class="Operator">=</span> <span class="String">''</span>
+<span id="L167" class="LineNr">167 </span><span class="Statement">let</span> <span class="Identifier">g:mkdp_page_title</span> <span class="Operator">=</span> <span class="String">'「${name}」'</span>
+<span id="L168" class="LineNr">168 </span>
+<span id="L169" class="LineNr">169 </span><span class="Comment">&quot; ===</span>
+<span id="L170" class="LineNr">170 </span><span class="Comment">&quot; === vim-table-mode</span>
+<span id="L171" class="LineNr">171 </span><span class="Comment">&quot; ===</span>
+<span id="L172" class="LineNr">172 </span><span class="Statement">map</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span>tm :TableModeToggle<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L173" class="LineNr">173 </span>
+<span id="L174" class="LineNr">174 </span><span class="Comment">&quot; ===</span>
+<span id="L175" class="LineNr">175 </span><span class="Comment">&quot; === Goyo</span>
+<span id="L176" class="LineNr">176 </span><span class="Comment">&quot; ===</span>
+<span id="L177" class="LineNr">177 </span><span class="Statement">map</span> <span class="Delimiter">&lt;</span><span class="Special">LEADER</span><span class="Delimiter">&gt;</span>gy :Goyo<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L178" class="LineNr">178 </span>
+<span id="L179" class="LineNr">179 </span><span class="Comment">&quot; ===</span>
+<span id="L180" class="LineNr">180 </span><span class="Comment">&quot; === Undotree</span>
+<span id="L181" class="LineNr">181 </span><span class="Comment">&quot; ===</span>
+<span id="L182" class="LineNr">182 </span><span class="Statement">let</span> <span class="Identifier">g:undotree_DiffAutoOpen</span> <span class="Operator">=</span> <span class="Number">0</span>
+<span id="L183" class="LineNr">183 </span><span class="Statement">map</span> L :UndotreeToggle<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;</span>
+<span id="L184" class="LineNr">184 </span>
+<span id="L185" class="LineNr">185 </span>
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
